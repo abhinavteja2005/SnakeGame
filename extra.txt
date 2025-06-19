@@ -1,0 +1,1 @@
+Need to add restart game, pause game and store highscore as well
