@@ -2,6 +2,8 @@ from tkinter import *
 from snake import Snake
 from blockade import Blockade
 from food import Food
+from score_manager import update_user_score, get_top_scores
+
 
 GAME_WIDTH = 700
 GAME_HEIGHT = 700
@@ -64,16 +66,54 @@ def change_direction(new_direction):
     if direction != opposites.get(new_direction):
         direction = new_direction
 
+def start_game():
+    global snake, food, blockades, score, direction
+    score = 0
+    direction = 'down'
+    label.config(text=f"Score: {score}")
+    canvas.delete("all")
+
+    snake = Snake(canvas)
+    blockades = Blockade(canvas, count=5)
+    food = Food(canvas, snake, blockades)
+    next_turn(snake, food, blockades)
+
+def restart_game():
+    start_game()
+
 def game_over():
-    canvas.delete(ALL)
-    canvas.create_text(
-        GAME_WIDTH / 2,
-        GAME_HEIGHT / 2,
-        font=('consolas', 70),
-        text="GAME OVER",
-        fill="red",
-        tag="gameover"
-    )
+    canvas.delete("all")
+    canvas.create_text(GAME_WIDTH / 2, GAME_HEIGHT / 2 - 100, font=('consolas', 70), text="GAME OVER", fill="red")
+
+    personal_best, global_best = update_user_score(username, score)
+    canvas.create_text(GAME_WIDTH / 2, GAME_HEIGHT / 2 - 30, font=('consolas', 28), fill="white", text=f"Your Score: {score}")
+    canvas.create_text(GAME_WIDTH / 2, GAME_HEIGHT / 2 + 10, font=('consolas', 24), fill="yellow", text=f"Your Best: {personal_best}  |  Global Best: {global_best}")
+
+    top_scores = get_top_scores()
+    scoreboard_text = "Top Players:\n" + "\n".join([f"{i+1}. {name} - {scr}" for i, (name, scr) in enumerate(top_scores)])
+    canvas.create_text(GAME_WIDTH / 2, GAME_HEIGHT / 2 + 90, font=('consolas', 20), fill='lightblue', text=scoreboard_text)
+
+    btn = Button(window, text="Restart", font=('consolas', 16), command=restart_game)
+    canvas.create_window(GAME_WIDTH / 2, GAME_HEIGHT / 2 + 200, window=btn)
+
+def ask_username():
+    canvas.delete("all")
+    canvas.create_text(GAME_WIDTH / 2, GAME_HEIGHT / 2 - 60, font=("consolas", 30), text="Enter Your Name:", fill="white")
+    
+    entry = Entry(window, font=("consolas", 20))
+    canvas.create_window(GAME_WIDTH / 2, GAME_HEIGHT / 2, window=entry)
+
+    def submit():
+        global username
+        username = entry.get().strip()
+        if username:
+            canvas.delete("all")
+            start_game()
+        else:
+            canvas.create_text(GAME_WIDTH / 2, GAME_HEIGHT / 2 + 50, text="Please enter a valid name", fill="red", font=("consolas", 16), tag="error")
+
+    btn = Button(window, text="Start", font=("consolas", 15), command=submit)
+    canvas.create_window(GAME_WIDTH / 2, GAME_HEIGHT / 2 + 50, window=btn)
 
 # --- Main Program ---
 window = Tk()
@@ -110,6 +150,6 @@ blockades = Blockade(canvas, count=5)
 food = Food(canvas, snake, blockades)
 
 # Start game
-next_turn(snake, food, blockades)
+ask_username()
 
 window.mainloop()

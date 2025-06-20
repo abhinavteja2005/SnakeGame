@@ -1,3 +1,4 @@
+# blockade.py
 from tkinter import *
 import random
 
@@ -16,6 +17,4 @@ class Blockade:
                 # No need to check for overlap with food or snake here
                 break
             self.coordinates.append([x, y])
-            canvas.create_rectangle(
-                x, y, x + SPACE_SIZE, y + SPACE_SIZE, fill=BLOCKADE_COLOR, tag="blockade"
-            )
+            canvas.create_rectangle(x, y, x + SPACE_SIZE, y + SPACE_SIZE, fill=BLOCKADE_COLOR, tag="blockade")
