@@ -1,25 +1,25 @@
 ---
 
-# 🐍 Snake Game (Tkinter Edition)
+# Snake Game (Tkinter Edition)
 
 A classic Snake Game built using Python's `tkinter` GUI framework. This version includes dynamic food placement, moving snake, blockades, restart capability, user tracking, and persistent score management.
 
 ---
 
-## 🚀 Features
+##  Features
 
-* ✅ Snake movement with arrow keys
-* ✅ Food appears at random safe positions
-* ✅ Collision detection with self, walls, and blockades
-* ✅ Score tracking in real-time
-* ✅ Restart button after game over
-* ✅ Enter your name before playing
-* ✅ Personal and Global Best Score Tracking
-* ✅ Top 5 Players scoreboard (stored in `scores.json`)
+*  Snake movement with arrow keys
+*  Food appears at random safe positions
+*  Collision detection with self, walls, and blockades
+*  Score tracking in real-time
+*  Restart button after game over
+*  Enter your name before playing
+*  Personal and Global Best Score Tracking
+*  Top 5 Players scoreboard (stored in `scores.json`)
 
 ---
 
-## 📂 File Structure
+##  File Structure
 
 ```bash
 ├── game.py              # Main game logic and UI
@@ -33,29 +33,29 @@ A classic Snake Game built using Python's `tkinter` GUI framework. This version 
 
 ---
 
-## 📜 Evolution of Features
+##  Evolution of Features
 
 | Stage        | Feature Added                                      |
 | ------------ | -------------------------------------------------- |
-| ✅ **Step 1** | Basic snake and food                               |
-| ✅ **Step 2** | Food avoids snake body                             |
-| ✅ **Step 3** | Added random blockades (obstacles)                 |
-| ✅ **Step 4** | Restart button after game over                     |
-| ✅ **Step 5** | User prompted for name (in-game input)             |
-| ✅ **Step 6** | Scores tracked in `scores.json`                    |
-| ✅ **Step 7** | Personal Best and Global Best scores displayed     |
-| ✅ **Step 8** | Top 5 player leaderboard shown on game over screen |
+|  **Step 1** | Basic snake and food                               |
+|  **Step 2** | Food avoids snake body                             |
+|  **Step 3** | Added random blockades (obstacles)                 |
+|  **Step 4** | Restart button after game over                     |
+|  **Step 5** | User prompted for name (in-game input)             |
+|  **Step 6** | Scores tracked in `scores.json`                    |
+|  **Step 7** | Personal Best and Global Best scores displayed     |
+|  **Step 8** | Top 5 player leaderboard shown on game over screen |
 
 ---
 
-## 🕹️ Controls
+##  Controls
 
 * Use **Arrow Keys** (`← ↑ ↓ →`) to change the snake's direction.
 * Press **Restart** after game over to play again.
 
 ---
 
-## 🧠 How It Works
+##  How It Works
 
 * When the game starts, you are asked to **enter your name** directly in the game window.
 * Your **score increases** as you collect food.
@@ -64,9 +64,9 @@ A classic Snake Game built using Python's `tkinter` GUI framework. This version 
 
 ---
 
-## ⚙️ Customization
+##  Customization
 
-### 🔄 Change Snake Speed
+###  Change Snake Speed
 
 The snake’s speed is controlled by the global variable:
 
@@ -88,14 +88,14 @@ SPEED = 200  # Slower
 
 ---
 
-## 📝 Requirements
+##  Requirements
 
 * Python 3.6+
 * No external libraries needed (`tkinter` and `json` are built-in)
 
 ---
 
-## 🧪 To Run the Game
+##  To Run the Game
 
 Make sure all `.py` files are in the same directory.
 
@@ -107,7 +107,7 @@ A window will open where you can enter your name and start playing.
 
 ---
 
-## 🏁 Example Leaderboard (`scores.json`)
+##  Example Leaderboard (`scores.json`)
 
 ```json
 {
@@ -121,13 +121,13 @@ A window will open where you can enter your name and start playing.
 
 ---
 
-## 💡 Ideas for Future Additions
+##  Ideas for Future Additions
 
-* ✅ Background music
-* ✅ Multiple levels with increasing speed
-* ✅ Snake skin/color customization
-* ✅ Pause/resume functionality
-* ✅ Power-ups and lives
+*  Background music
+*  Multiple levels with increasing speed
+*  Snake skin/color customization
+*  Pause/resume functionality
+*  Power-ups and lives
 
 ---
 
