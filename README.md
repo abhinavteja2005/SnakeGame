@@ -1,5 +1,4 @@
 ---
-
 # Snake Game (Tkinter Edition)
 
 A classic Snake Game built using Python's `tkinter` GUI framework. This version includes dynamic food placement, moving snake, blockades, restart capability, user tracking, and persistent score management.
