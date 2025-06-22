@@ -111,10 +111,10 @@ A window will open where you can enter your name and start playing.
 ```json
 {
   "Abhinav": 15,
-  "Riya": 8,
-  "Aryan": 12,
-  "Priya": 10,
-  "Shreyas": 18
+  "Teja": 8,
+  "Yesheeth": 12,
+  "Eswar": 10,
+  "Kohli": 18
 }
 ```
 
